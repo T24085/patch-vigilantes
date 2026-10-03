@@ -21,6 +21,6 @@ One workshop home, one repository per repaired program. Light Table is the first
 
 ## Website
 
-Open `site/index.html` locally. Static HTML/CSS; no paid services, external fonts, package installation or server required. The site uses Agency OS and its Creative Direction, Web Color System, Typography Mastery and QA Polish guidance. GitHub Pages is the publication target. A clean site-only gh-pages branch is prepared, but GitHub returned HTTP 422 because the current plan does not support Pages for this private repository. A separate public site-only repository is awaiting approval; this workshop and Light Table remain private. The optional counter has no deployed endpoint and honestly displays unavailable.
+Open `site/index.html` locally. Static HTML/CSS; no paid services, external fonts, package installation or server required. The site uses Agency OS and its Creative Direction, Web Color System, Typography Mastery and QA Polish guidance. Live site: https://t24085.github.io/patch-vigilantes/ . Taylor approved this workshop repository becoming public; GitHub Pages serves the clean site-only gh-pages branch. Light Table remains private. The optional counter has no deployed endpoint and honestly displays unavailable.
 
 [Original Light Table](https://github.com/LightTable/LightTable) · [Original MIT license](https://github.com/LightTable/LightTable/blob/develop/LICENSE.md)
