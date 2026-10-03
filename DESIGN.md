@@ -6,7 +6,7 @@ Dominant direction: playful illustrative repair workshop. Supporting influence: 
 
 ## Composition and Color
 
-The dark teal first screen introduces the mechanic with a paper seal and fine orbit line. A golden manifesto strip leads into a cream project shelf. Light Table is the sole active project, with zero completed restorations. The real screenshot links to its original full-size PNG. Its repair log separates verified synchronous behavior from pending async/runtime work. Three large illustrated process scenes explain discovery, repair and evidence. The original panorama closes the workshop story, with a transparent tool sticker collage.
+The dark teal first screen introduces the mechanic with a paper seal and fine orbit line. A golden manifesto strip leads into a cream project shelf. Light Table is the sole active project, with zero completed restorations. The real screenshot links to its original full-size PNG. Its repair log separates verified synchronous behavior from remaining plugin/menu/compatibility work; bounded async and Electron 44.5.1 are now verified in private staging. Three large illustrated process scenes explain discovery, repair and evidence. The original panorama closes the workshop story, with a transparent tool sticker collage.
 
 Semantic colors: canvas #082c34, deep #06232a, cream #fff4d9, paper #f4ecd8, ink #123b40, paper muted #4f6460, dark muted #b9cec9, gold action #f7bd45, coral accent #f18a6b, dark rust status #913b24. Body and control pairings were checked by the rendered axe WCAG AA audit at all four viewport sizes. Fonts are local Arial Black, Segoe UI, Georgia and Consolas; no external font request or paid service.
 

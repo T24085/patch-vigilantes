@@ -11,7 +11,7 @@ Digital archaeology, with fixes people can actually use. We want useful software
 
 | Project | Actual Status | Evidence and Gaps |
 | --- | --- | --- |
-| [Light Table revival](https://github.com/T24085/lighttable-revival) | Experimental partial revival; private staging | Original ClojureScript compiled; original editor opens, edits and saves one proof file. Synchronous JavaScript variables, functions, arrays and objects run in disposable sandboxed renderer/worker contexts, showing 43 tied to the exact source hash. Sixteen new language checks and the freshly extracted portable package pass. Async execution, legacy plugins, menus and runtime modernization remain incomplete. Electron 13 is obsolete; memory monitoring is reactive, not a hard OS quota. |
+| Light Table revival | Experimental partial revival; private staging | Original editor opens, edits and saves proof files. Electron 44.5.1 / Chromium 152.0.7977.130 runs with sandboxing on and Node access off. Synchronous JavaScript plus promises and bounded one-shot timers pass verified checks. Private runtime worker reports 44 policy, 23 UI, 15 language and 31 async/resource checks passed. Native menus, legacy plugins and broader compatibility remain incomplete. 192 MiB memory monitoring is reactive, not a hard OS quota; execution has a 1.5-second watchdog and no autorun. No public download or release. |
 
 ## How We Restore
 
