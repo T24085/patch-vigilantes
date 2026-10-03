@@ -1,0 +1,4 @@
+.preview/
+*.log
+.DS_Store
+counter-data/
