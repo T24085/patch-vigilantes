@@ -11,7 +11,7 @@ Digital archaeology, with fixes people can actually use. We want useful software
 
 | Project | Actual Status | Evidence and Gaps |
 | --- | --- | --- |
-| [Light Table revival](https://github.com/T24085/lighttable-revival) | Experimental partial revival; private staging | Original ClojureScript compiled; original editor opens, edits and saves one proof file. Restricted arithmetic returns 42 then 43, tied to exact buffer hashes. Legacy plugins, menus and runtime modernization remain incomplete. |
+| [Light Table revival](https://github.com/T24085/lighttable-revival) | Experimental partial revival; private staging | Original ClojureScript compiled; original editor opens, edits and saves one proof file. Synchronous JavaScript variables, functions, arrays and objects run in disposable sandboxed renderer/worker contexts, showing 43 tied to the exact source hash. Sixteen new language checks and the freshly extracted portable package pass. Async execution, legacy plugins, menus and runtime modernization remain incomplete. Electron 13 is obsolete; memory monitoring is reactive, not a hard OS quota. |
 
 ## How We Restore
 
@@ -21,6 +21,6 @@ One workshop home, one repository per repaired program. Light Table is the first
 
 ## Website
 
-Open `site/index.html` locally. Static HTML/CSS; no paid services, external fonts, package installation or server required. The site uses Agency OS and its Creative Direction, Web Color System, Typography Mastery and QA Polish guidance. Hosting is not enabled; source repositories stay private. A future separately approved static hosting destination can serve the site without publishing unfinished program source.
+Open `site/index.html` locally. Static HTML/CSS; no paid services, external fonts, package installation or server required. The site uses Agency OS and its Creative Direction, Web Color System, Typography Mastery and QA Polish guidance. GitHub Pages is the publication target. A clean site-only gh-pages branch is prepared, but GitHub returned HTTP 422 because the current plan does not support Pages for this private repository. A separate public site-only repository is awaiting approval; this workshop and Light Table remain private. The optional counter has no deployed endpoint and honestly displays unavailable.
 
 [Original Light Table](https://github.com/LightTable/LightTable) · [Original MIT license](https://github.com/LightTable/LightTable/blob/develop/LICENSE.md)
