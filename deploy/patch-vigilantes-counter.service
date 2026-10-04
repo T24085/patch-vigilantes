@@ -1,0 +1,30 @@
+[Unit]
+Description=Patch Vigilantes aggregate page view counter
+After=network.target
+
+[Service]
+Type=simple
+User=taylor
+Group=taylor
+WorkingDirectory=/home/taylor/patch-vigilantes-counter
+EnvironmentFile=/home/taylor/patch-vigilantes-counter/runtime.env
+ExecStart=/usr/bin/python3 /home/taylor/patch-vigilantes-counter/server/counter.py --directory /home/taylor/patch-vigilantes-counter/counter-data --port 4319
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=10
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/home/taylor/patch-vigilantes-counter/counter-data
+RestrictAddressFamilies=AF_INET AF_UNIX
+RestrictSUIDSGID=true
+LockPersonality=true
+MemoryMax=96M
+TasksMax=64
+LimitNOFILE=256
+CPUQuota=25%
+
+[Install]
+WantedBy=multi-user.target

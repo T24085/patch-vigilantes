@@ -2,3 +2,5 @@
 *.log
 .DS_Store
 counter-data/
+__pycache__/
+*.pyc
