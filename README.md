@@ -11,7 +11,7 @@ Digital archaeology, with fixes people can actually use. We want useful software
 
 | Project | Actual Status | Evidence and Gaps |
 | --- | --- | --- |
-| Light Table revival | Experimental private staging; further implementation paused | Original editor on Electron 44.5.1; verified local project/save/JavaScript/watch workflows, scoped live-state updates, language REPLs and assistant V1 baseline. Latest completed baseline: 41-entry regression, fresh Vite 33/33 and live demo 5/5. Later local work exceeds the private remote checkpoint and is not a newly published program release. Clean Windows, hosted CI, packaging and broader parity remain open. |
+| Light Table revival | Experimental local implementation; public testing release being prepared | Original editor on Electron 44.5.1; verified local project/save/JavaScript/watch workflows, scoped live-state updates, language REPLs and assistant V1 baseline. Latest completed baseline: 41-entry regression, fresh Vite 33/33 and live demo 5/5. Later local work exceeds the private remote checkpoint and is not a newly published program release. Clean Windows, hosted CI, packaging and broader parity remain open. |
 
 ## How We Restore
 
@@ -27,4 +27,8 @@ Open `site/index.html` locally. Static HTML/CSS; no paid services, external font
 
 ## Workshop Blog
 
-Read [the field notes](https://t24085.github.io/patch-vigilantes/blog/) for three distinct technical stories: the Light Table restoration, supported state-preserving live edits and the public Retro Visits counter. [Evidence and status](https://t24085.github.io/patch-vigilantes/blog/evidence.html) distinguish reviewed private local checkpoints from public source and deployed infrastructure. No runtime binaries, raw private logs or private repository links are published.
+Read [the field notes](https://t24085.github.io/patch-vigilantes/blog/) for four distinct technical stories: Ollama inside Light Table, the restoration, supported state-preserving live edits and the public Retro Visits counter. [Evidence and status](https://t24085.github.io/patch-vigilantes/blog/evidence.html) distinguish reviewed private local checkpoints from public source and deployed infrastructure. No runtime binaries, raw private logs or private repository links are published.
+
+## Ollama integration story
+
+[Read the implemented Ollama assistant guide](https://t24085.github.io/patch-vigilantes/blog/ollama-inside-light-table.html). The public testing release is being prepared; program downloads are not available yet.

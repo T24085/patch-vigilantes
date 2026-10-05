@@ -2,7 +2,7 @@
   "reviewedDate": "2026-10-05",
   "scope": "Public editorial summary of inspected checkpoints; not raw test logs or a release certification.",
   "lightTable": {
-    "state": "experimental private staging; further implementation paused",
+    "state": "experimental local implementation; public testing release being prepared; no public program release yet",
     "githubVersusLocal": "The private remote retains an earlier checkpoint. Later described features are recorded local verification, not newly published program commits.",
     "completedCheckpoint": {
       "label": "Assistant V1 baseline",
@@ -73,7 +73,15 @@
       "complete React workflow",
       "remaining linked-view/reload cases",
       "inline autocomplete, MCP, cooperating agents"
-    ]
+    ],
+    "contextPickerFollowUp": {
+      "scope": "Focused checks, not a new full regression",
+      "controllerChecks": 50,
+      "nativeChecks": 22,
+      "configuredDefaultContextTokens": 65536,
+      "verifiedCustomRequestTokens": 24576,
+      "passed": true
+    }
   },
   "retroVisits": {
     "state": "deployed public workshop infrastructure",
