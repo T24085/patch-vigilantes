@@ -1,0 +1,3 @@
+# Explicit empty local configuration: this new dedicated tunnel is dashboard managed.
+# No ingress from an existing user's default config is inherited.
+{}

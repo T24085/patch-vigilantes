@@ -1,6 +1,6 @@
 # Page View Counter
 
-The retro ticker displays the shared aggregate returned by a small Jetson backend. The implementation is staged and tested; public activation is pending tunnel ownership verification, secure user credential handoff, and approval for DNS, tunnel and boot changes. Until the verified endpoint is configured, the website displays unavailable. Test counts are never copied into production.
+The retro ticker displays the shared aggregate returned by the Jetson backend at `https://counter.novatec.casa/counter`. Taylor approved the dedicated tunnel, DNS, boot services and Pages publication and supplied credentials directly in a private terminal. The API and counter/connector boot services were verified on October 5, 2026. Test databases are never copied into production; final live browser verification may add a separately reported QA page view.
 
 ## What counts
 
@@ -20,7 +20,7 @@ The only allowed browser origin is `https://t24085.github.io`. CORS does not aut
 
 ## Frontend configuration
 
-`site/counter.js` accepts an explicitly configured HTTPS `/counter` URL, sends no credentials, and uses a five-second deadline. It never manufactures or caches a popularity count. The HTML `counter-endpoint` meta value stays empty until an approved public endpoint has been verified. A counter failure leaves the six dashes visible and does not block navigation or page content.
+`site/counter.js` uses the verified HTTPS `/counter` URL, sends no credentials, and uses a five-second deadline. It never manufactures or caches a popularity count. Clearing the HTML `counter-endpoint` meta value disables the counter for rollback. A counter failure leaves the six dashes visible and does not block navigation or page content.
 
 The gold retro digits, accessible status text and whimsical workshop design are preserved. Larger totals fit within the counter width, including at 320 pixels. The label remains page views.
 

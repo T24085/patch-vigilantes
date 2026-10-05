@@ -1,0 +1,31 @@
+[Unit]
+Description=Dedicated Patch Vigilantes Cloudflare connector
+Wants=network-online.target
+Requires=patch-vigilantes-counter.service
+After=network-online.target patch-vigilantes-counter.service
+ConditionPathExists=/home/taylor/patch-vigilantes-counter/private/cloudflare.token
+
+[Service]
+Type=simple
+User=taylor
+Group=taylor
+WorkingDirectory=/home/taylor/patch-vigilantes-counter
+ExecStart=/home/taylor/patch-vigilantes-counter/runtime/cloudflared --config /home/taylor/patch-vigilantes-counter/deploy/cloudflared.yml --no-autoupdate tunnel --metrics 127.0.0.1:0 run --token-file /home/taylor/patch-vigilantes-counter/private/cloudflare.token
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=15
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+RestrictSUIDSGID=true
+LockPersonality=true
+MemoryMax=192M
+TasksMax=96
+LimitNOFILE=512
+CPUQuota=25%
+
+[Install]
+WantedBy=multi-user.target

@@ -4,3 +4,6 @@
 counter-data/
 __pycache__/
 *.pyc
+private/
+runtime.env
+staging.pid

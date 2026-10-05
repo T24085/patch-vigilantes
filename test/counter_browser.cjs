@@ -33,7 +33,7 @@ fs.mkdirSync(evidence, {recursive: true});
       const file = path.join(root, 'site', pathname || 'index.html');
       let body = fs.readFileSync(file);
       const type = file.endsWith('.html') ? 'text/html' : file.endsWith('.js') ? 'text/javascript' : file.endsWith('.css') ? 'text/css' : file.endsWith('.png') ? 'image/png' : 'image/webp';
-      if (file.endsWith('.html') && mode !== 'disabled') body = Buffer.from(body.toString().replace('name="counter-endpoint" content=""', 'name="counter-endpoint" content="https://counter.test/counter"'));
+      if (file.endsWith('.html')) body = Buffer.from(body.toString().replace(/name="counter-endpoint" content="[^"]*"/, 'name="counter-endpoint" content="' + (mode === 'disabled' ? '' : 'https://counter.test/counter') + '"'));
       await route.fulfill({status: 200, contentType: type, body});
     });
     await context.route('https://counter.test/counter', async route => {

@@ -1,10 +1,10 @@
 # Counter Activation
 
-The backend and frontend are implemented and tested. The Jetson counter is staged manually on loopback port 4319; no boot service, public tunnel route, DNS record, or Pages update has been activated. Public activation must wait for exact approval and a secure credential handoff by Taylor.
+The approved counter and dedicated connector are active and enabled as boot services on the Jetson. The HTTPS endpoint `https://counter.novatec.casa/counter` passed read-only, CORS/preflight, rejection and non-counting test-event checks on October 5, 2026. Its production total was zero before Pages publication. The dedicated tunnel ID is `38ddc6da-6585-4b69-b7b4-a68e31663f0b`; credentials were entered only by Taylor in a private terminal. The origin service is **HTTP** `127.0.0.1:4319`; public TLS terminates at Cloudflare.
 
 ## Staged layout
 
-Directory: `/home/taylor/patch-vigilantes-counter`. Source: `server/counter.py`. Private persistent data: `counter-data/page-views.sqlite3`. Tests use disposable databases and temporary listeners. `deploy/patch-vigilantes-counter.service` is a prepared system service template, not installed in `/etc/systemd/system`. `deploy/runtime.env.example` contains only a blank hostname setting, not credentials.
+Directory: `/home/taylor/patch-vigilantes-counter`. Source: `server/counter.py`. Private persistent data: `counter-data/page-views.sqlite3`. Tests use disposable databases and temporary listeners. `patch-vigilantes-counter.service` and `patch-vigilantes-counter-tunnel.service` are installed in `/etc/systemd/system` and enabled. Their templates remain in `deploy/`. `deploy/runtime.env.example` contains only a blank hostname setting, not credentials.
 
 The manual launcher, `python3 deploy/staging.py`, checks port availability, launches only this backend and records `staging.pid`. `python3 deploy/staging.py --stop` verifies that PID belongs to this counter before stopping it and preserves its database. Manual staging survives an SSH disconnect but is not a boot service and will not survive a Jetson reboot.
 
@@ -16,15 +16,17 @@ The prior LLM tunnel proposal uses ID `1f2ac7aa-e364-485e-9a33-7a45e3417ec0`. It
 
 Do not add a Jetson replica of that shared tunnel until every existing route can be served correctly from every connector. Cloudflare sends traffic across the associated replicas, and remotely managed replicas use the same routes. A counter-only replica can therefore disrupt the existing 8000 routes. See [Cloudflare replica documentation](https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/configure-tunnels/tunnel-availability/deploy-replicas/).
 
-Recommended independent approval wording:
+Approved dedicated tunnel scope:
 
 > Approve a dedicated `patch-vigilantes-counter` Cloudflare tunnel for `counter.novatec.casa`, routing only `/counter` to Jetson `127.0.0.1:4319`, its required DNS record, and counter/tunnel boot services. Keep the shared LLM tunnel and its existing routes unchanged.
 
-This is a recommendation, not an approval already granted. If Taylor instead chooses the shared LLM tunnel, first verify its exact live ingress, connector owner, all existing origin targets, and a route-preserving migration plan. Then request approval for that exact plan. Do not reuse the old CNAME target for a new dedicated tunnel; use the actual new tunnel UUID confirmed by Taylor.
+The dedicated route/DNS/boot scope and subsequent Pages publication were explicitly approved. The new tunnel is named `counter.novatec.casa` in Taylor's dashboard and uses its actual UUID above; the shared LLM tunnel was preserved. Any future move into the shared LLM tunnel needs a separate route-preserving plan and approval.
 
 Taylor must provision or securely transfer the chosen tunnel's credential directly to the Jetson. The assistant must not retrieve, copy, print, or transmit tunnel secrets; do not put tokens in chat, screenshots, the repository, logs, or command-line arguments. Confirm credential presence/permissions and tunnel identity only, without reading its contents. Configuration management mode must be established before preparing the connector invocation.
 
 ## Counter boot service after approval
+
+These steps are retained for recovery. `deploy/secure_setup.py` now waits up to 15 seconds for backend readiness before enabling the connector. Repeated setup runs reuse the stored credential and identical installed units and preserve the database. The credential receiver never reads or replaces an existing token. Existing active binaries are reused rather than overwritten. Sudo authentication happens only in Taylor's private terminal.
 
 1. Confirm the final hostname and create `runtime.env` in the dedicated directory, containing `COUNTER_PUBLIC_HOST=counter.novatec.casa` only if that exact hostname was approved and configured. This file is nonsecret; keep mode 600 anyway.
 2. Stop only the counter staging process using `deploy/staging.py --stop` and recheck 4319. Keep the database intact.
