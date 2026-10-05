@@ -1,0 +1,87 @@
+{
+  "reviewedDate": "2026-10-05",
+  "scope": "Public editorial summary of inspected checkpoints; not raw test logs or a release certification.",
+  "lightTable": {
+    "state": "experimental private staging; further implementation paused",
+    "githubVersusLocal": "The private remote retains an earlier checkpoint. Later described features are recorded local verification, not newly published program commits.",
+    "completedCheckpoint": {
+      "label": "Assistant V1 baseline",
+      "verifiedAt": "2026-10-05T18:44:11Z",
+      "regressionEntries": 41,
+      "controllerChecks": 41,
+      "nativeAssistantChecks": 17,
+      "viteChecks": 33,
+      "liveDemoChecks": 5,
+      "passingReceipts": 74,
+      "frozenFiles": 277,
+      "ownedProofProcessesRemaining": 0,
+      "realModelWebChecks": 8,
+      "realModelPythonChecks": 3
+    },
+    "saveCheckpoint": {
+      "passed": true,
+      "originalEditorChecks": 41,
+      "regressionEntries": 31,
+      "passingReceipts": 61,
+      "frozenFiles": 222,
+      "viteChecks": 33,
+      "verifiedAt": "2026-10-05T04:28:08Z"
+    },
+    "liveStateCheckpoint": {
+      "passed": true,
+      "transformationChecks": 7,
+      "nativeStateChecks": 10,
+      "regressionEntries": 37,
+      "passingReceipts": 68,
+      "frozenFiles": 246,
+      "viteChecks": 33,
+      "demoChecks": 5,
+      "verifiedAt": "2026-10-05T13:44:34Z"
+    },
+    "languageTransportCheckpoint": {
+      "passed": true,
+      "backendChecks": 25,
+      "editorChecks": 19,
+      "protocolChecks": 8,
+      "regressionEntries": 39,
+      "passingReceipts": 71,
+      "frozenFiles": 261,
+      "verifiedAt": "2026-10-05T14:49:56Z"
+    },
+    "memoryCheckpoint": {
+      "passed": true,
+      "focusedIntegrationChecks": 134,
+      "gateChecks": 5,
+      "localFamilyGiB": 1,
+      "clojureHeapGiB": 1,
+      "clojureFamilyGiB": 2,
+      "verifiedAt": "2026-10-05T15:08:09Z"
+    },
+    "laterAssistantRefinements": {
+      "scope": "Focused context/Stop/read-loop checks; not a separately completed full regression",
+      "controllerChecks": 50,
+      "nativeChecks": 20,
+      "demoChecks": 5,
+      "verifiedModelContextTokens": 65536
+    },
+    "notVerifiedAsRelease": [
+      "clean Windows installation",
+      "hosted CI",
+      "current packaging/release",
+      "full legacy/live-coding parity",
+      "arbitrary module state migration",
+      "complete React workflow",
+      "remaining linked-view/reload cases",
+      "inline autocomplete, MCP, cooperating agents"
+    ]
+  },
+  "retroVisits": {
+    "state": "deployed public workshop infrastructure",
+    "publicSource": "https://github.com/T24085/patch-vigilantes",
+    "activationCommit": "54730432c694ab4ddaa00becbe97687bf1c31b42",
+    "counts": "accepted homepage loads; not unique people",
+    "blogPagesIncrement": false,
+    "documentedBackendTestGroups": 10,
+    "documentedBrowserFixtureStates": 10
+  }
+}
