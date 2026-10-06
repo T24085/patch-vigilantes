@@ -2,7 +2,7 @@
   "reviewedDate": "2026-10-05",
   "scope": "Public editorial summary of inspected checkpoints; not raw test logs or a release certification.",
   "lightTable": {
-    "state": "experimental local implementation; public testing release being prepared; no public program release yet",
+    "state": "unsigned experimental public testing release v0.9.0-revival.1; clean-machine certification, hosted CI and fresh full regression pending",
     "githubVersusLocal": "The private remote retains an earlier checkpoint. Later described features are recorded local verification, not newly published program commits.",
     "completedCheckpoint": {
       "label": "Assistant V1 baseline",
@@ -91,5 +91,27 @@
     "blogPagesIncrement": false,
     "documentedBackendTestGroups": 10,
     "documentedBrowserFixtureStates": 10
+  },
+  "publicTestingRelease": {
+    "url": "https://github.com/T24085/lighttable-revival/releases/tag/v0.9.0-revival.1",
+    "source": "https://github.com/T24085/lighttable-revival",
+    "commit": "3ebb3b4ef9e6654b432463f3b231665537e44896",
+    "unsigned": true,
+    "runtimeRequirements": [
+      "Node 24+",
+      "PowerShell 7+"
+    ],
+    "focusedChecks": {
+      "controller": 50,
+      "native": 27,
+      "worker": 6,
+      "providerRegistry": 5,
+      "packageSmoke": 3
+    },
+    "notVerified": [
+      "clean-machine certification",
+      "hosted CI",
+      "fresh full regression"
+    ]
   }
 }
